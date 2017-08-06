@@ -202,7 +202,7 @@
     }
     pre {text-align:left;"}
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
 </head>
 <body>
 
@@ -271,7 +271,14 @@
     </div>
 
     <pre><code class="html">
-      &lt;script name="Jsel" data-path="your/json/filepath" data-pid="parent" data-cid="child"&gt;&lt;/script&gt;
+      &lt;script 
+              name="Jsel" 
+              data-path="your/json/filepath" 
+              data-pid="parent" 
+              data-cid="child"&gt;
+      &lt;/script&gt;
+      &lt;select id="parent"&gt;&lt;/select&gt;
+      &lt;select id="child"&gt;&lt;/select&gt;
     </code></pre>
 
 </section>
@@ -298,7 +305,16 @@
     </div>
 
     <pre><code class="html">
-      &lt;script name="Jsel" data-path="your/json/filepath" data-pid="parent2" data-cid="child2" data-empty="true" data-text="なし"&gt;&lt;/script&gt;
+      &lt;script 
+              name="Jsel" 
+              data-path="your/json/filepath" 
+              data-pid="parent2" 
+              data-cid="child2" 
+              data-empty="true" 
+              data-text="なし"&gt;
+      &lt;/script&gt;
+      &lt;select id="parent2"&gt;&lt;/select&gt;
+      &lt;select id="child2"&gt;&lt;/select&gt;
     </code></pre>
 
 </section>
@@ -324,7 +340,18 @@
     </div>
 
     <pre><code class="html">
-      &lt;script name="Jsel" data-path="your/json/filepath" data-pid="parent3" data-cid="child3" data-pval="PARENT_KEY" data-cval="CHILD_KEY"&gt;&lt;/script&gt;
+    <pre><code class="html">
+      &lt;script 
+              name="Jsel" 
+              data-path="your/json/filepath" 
+              data-pid="parent3" 
+              data-cid="child3" 
+              data-pval="PARENT_KEY" 
+              data-cval="CHILD_KEY"&gt;
+      &lt;/script&gt;
+      &lt;select id="parent3"&gt;&lt;/select&gt;
+      &lt;select id="child3"&gt;&lt;/select&gt;
+    </code></pre>
     </code></pre>
 
 </section>

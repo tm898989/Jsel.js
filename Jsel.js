@@ -46,17 +46,17 @@ function initElement(id, text){
     return element;
 }
 function loadJson(path, callback, config, empty, text){
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', path, true);
-  xhr.responseType = 'json';
-  xhr.send(null);
-  xhr.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-          if( this.response ) callback(this.response, config, empty, text);
-      }
-  };
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', path, true);
+    xhr.responseType = 'json';
+    xhr.send(null);
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if( this.response ) callback(this.response, config, empty, text);
+        }
+    }
 }
-// json load & 実行
+// json load & run
 var elem   = document.getElementsByName('Jsel');
 for (var i = 0; elem.length > i; i++){
     var data   = elem[i].dataset;
@@ -65,6 +65,6 @@ for (var i = 0; elem.length > i; i++){
     var config = { parent: {id: data.pid, val: pval}, child: {id: data.cid, val: cval} };
     var empty  = data.empty == "true" ? true:false;
     var text   = data.text ? data.text:'選択なし';
-    
+
     loadJson(data.path, JSEL, config, empty, text);
 }
