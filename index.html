@@ -200,11 +200,56 @@
       background: #444;
       text-shadow: 0 1px rgba(0, 0, 0, 0.4);
     }
+    pre {text-align:left;"}
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css">
 </head>
 <body>
 
 <h1 align="center">JSEL デモ</h1>
+
+<section class="container">
+    <h3>使用準備</h3>
+    <p>HTMLファイルのどこにでもロードする事が出来ます</p>
+    <pre><code class="html">
+      &lt;script src="path/js/Jsel.js"&gt;&lt;/script&gt;
+    </code></pre>
+</section>
+
+<section class="container">
+    <h3>JSONファイルの形式</h3>
+    <p>下記のような形式のJSONファイルを用意してください</p>
+    <pre><code class="json">{
+        "PARENT_KEY1": {
+            "name": "PARENT_NAME1",
+            "child": {
+                "CHILD_KEY1": {
+                    "name": "CHILD_NAME1"
+                }, 
+                "CHILD_KEY2": {
+                    "name": "CHILD_NAME2"
+                }
+            } 
+        }, 
+        "PARENT_KEY2": {
+            "name": "PARENT_NAME2",
+            "child": {
+                "CHILD_KEY3": {
+                    "name": "CHILD_NAME3"
+                }, 
+                "CHILD_KEY4": {
+                    "name": "CHILD_NAME4"
+                }
+            }
+        },
+        .
+        .
+        .
+        .
+    }</code></pre>
+</section>
+
+<h2 align="center">使用例</h2>
 
 <section class="container">
     
@@ -224,6 +269,10 @@
     <div class="dropdown dropdown-dark">
       <select id="child" name="two" class="dropdown-select"></select>
     </div>
+
+    <pre><code class="html">
+      &lt;script name="Jsel" data-path="your/json/filepath" data-pid="parent" data-cid="child"&gt;&lt;/script&gt;
+    </code></pre>
 
 </section>
 
@@ -248,6 +297,10 @@
       <select id="child2" name="two" class="dropdown-select"></select>
     </div>
 
+    <pre><code class="html">
+      &lt;script name="Jsel" data-path="your/json/filepath" data-pid="parent2" data-cid="child2" data-empty="true" data-text="なし"&gt;&lt;/script&gt;
+    </code></pre>
+
 </section>
 
 <section class="container">
@@ -270,6 +323,10 @@
       <select id="child3" name="two" class="dropdown-select"></select>
     </div>
 
+    <pre><code class="html">
+      &lt;script name="Jsel" data-path="your/json/filepath" data-pid="parent3" data-cid="child3" data-pval="13" data-cval="13120"&gt;&lt;/script&gt;
+    </code></pre>
+
 </section>
 
 <section class="about">
@@ -284,5 +341,7 @@
 </section>
 
 <script src="Jsel.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
