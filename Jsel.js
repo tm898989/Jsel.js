@@ -45,6 +45,13 @@ function initElement(id, text){
     element.options[0] = new Option(text, '');
     return element;
 }
+function add(callback){
+    try { 
+        window.addEventListener("load", callback, false); 
+    } catch (e) { 
+        window.attachEvent("onload", callback); 
+    }
+}
 function loadJson(path, callback, config, empty, text){
     var xhr = new XMLHttpRequest();
     xhr.open('GET', path, true);
@@ -56,15 +63,18 @@ function loadJson(path, callback, config, empty, text){
         }
     }
 }
-// json load & run
-var elem   = document.getElementsByName('Jsel');
-for (var i = 0; elem.length > i; i++){
-    var data   = elem[i].dataset;
-    var pval   = data.pval ? data.pval:null;
-    var cval   = data.cval ? data.cval:null;
-    var config = { parent: {id: data.pid, val: pval}, child: {id: data.cid, val: cval} };
-    var empty  = data.empty == "true" ? true:false;
-    var text   = data.text ? data.text:'選択なし';
 
-    loadJson(data.path, JSEL, config, empty, text);
-}
+// json load & run
+add(function() {
+  var elem   = document.getElementsByName('Jsel');
+  for (var i = 0; elem.length > i; i++){
+      var data   = elem[i].dataset;
+      var pval   = data.pval ? data.pval:null;
+      var cval   = data.cval ? data.cval:null;
+      var config = { parent: {id: data.pid, val: pval}, child: {id: data.cid, val: cval} };
+      var empty  = data.empty == "true" ? true:false;
+      var text   = data.text ? data.text:'選択なし';
+  
+      loadJson(data.path, JSEL, config, empty, text);
+  }
+});
